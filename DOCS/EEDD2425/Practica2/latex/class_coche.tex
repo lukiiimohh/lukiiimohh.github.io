@@ -1,0 +1,260 @@
+\doxysection{Coche Class Reference}
+\label{class_coche}\index{Coche@{Coche}}
+
+
+{\ttfamily \#include $<$Coche.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\label{class_coche_a1c1d543a68ab32f170da90dea821d71d} 
+{\bfseries Coche} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de la clase \doxyref{Coche}{p.}{class_coche}. \end{DoxyCompactList}\item 
+\textbf{ Coche} (const std\+::string \&id\+Matricula, const std\+::string \&marca, const std\+::string \&modelo)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \doxyref{Coche}{p.}{class_coche}. \end{DoxyCompactList}\item 
+\textbf{ Coche} (const \textbf{ Coche} \&orig)
+\item 
+\textbf{ Coche} (std\+::string \&id\+Matricula)
+\item 
+\label{class_coche_a2543494fd03814f5eab5cc9d8bf5687a} 
+{\bfseries $\sim$\+Coche} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase \doxyref{Coche}{p.}{class_coche}. \end{DoxyCompactList}\item 
+const std\+::string \& \textbf{ get\+Id\+Matricula} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la matrícula del coche. \end{DoxyCompactList}\item 
+\textbf{ Coche} \& \textbf{ set\+Id\+Matricula} (const std\+::string \&id\+Matricula)
+\begin{DoxyCompactList}\small\item\em Establece la matrícula del coche. \end{DoxyCompactList}\item 
+const std\+::string \& \textbf{ get\+Marca} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la marca del coche. \end{DoxyCompactList}\item 
+\textbf{ Coche} \& \textbf{ set\+Marca} (const std\+::string \&marca)
+\begin{DoxyCompactList}\small\item\em Establece la marca del coche. \end{DoxyCompactList}\item 
+const std\+::string \& \textbf{ get\+Modelo} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el modelo del coche. \end{DoxyCompactList}\item 
+\textbf{ Coche} \& \textbf{ set\+Modelo} (const std\+::string \&modelo)
+\begin{DoxyCompactList}\small\item\em Establece el modelo del coche. \end{DoxyCompactList}\item 
+bool \textbf{ operator==} (const \textbf{ Coche} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador ==. \end{DoxyCompactList}\item 
+bool \textbf{ operator$<$} (const \textbf{ Coche} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \textbf{ operator$<$$<$} (std\+::ostream \&os, const \textbf{ Coche} \&coche)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Juan Carrasco Vico 
+
+Gregorio Torres Herrera 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\index{Coche@{Coche}!Coche@{Coche}}
+\index{Coche@{Coche}!Coche@{Coche}}
+\doxysubsubsection{Coche()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_coche_a85b383f795702f913530fb58a0dd1b12} 
+Coche\+::\+Coche (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id\+Matricula}{, }\item[{const std\+::string \&}]{marca}{, }\item[{const std\+::string \&}]{modelo}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \doxyref{Coche}{p.}{class_coche}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Matricula} & Matrícula del coche \\
+\hline
+{\em marca} & Marca del coche \\
+\hline
+{\em modelo} & Modelo del coche\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Juan Carrasco Vico 
+
+Gregorio Torres Herrera 
+\end{DoxyAuthor}
+\index{Coche@{Coche}!Coche@{Coche}}
+\index{Coche@{Coche}!Coche@{Coche}}
+\doxysubsubsection{Coche()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_coche_a102adfbe504df716c91b112f29a1b44b} 
+Coche\+::\+Coche (\begin{DoxyParamCaption}\item[{const \textbf{ Coche} \&}]{orig}{}\end{DoxyParamCaption})}
+
+Constructor de copia de la clase \doxyref{Coche}{p.}{class_coche} 
+\begin{DoxyParams}{Parameters}
+{\em orig} & \doxyref{Coche}{p.}{class_coche} a copiar \\
+\hline
+\end{DoxyParams}
+\index{Coche@{Coche}!Coche@{Coche}}
+\index{Coche@{Coche}!Coche@{Coche}}
+\doxysubsubsection{Coche()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_coche_aefe842d0427052e64e2ff5513c4a3041} 
+Coche\+::\+Coche (\begin{DoxyParamCaption}\item[{std\+::string \&}]{id\+Matricula}{}\end{DoxyParamCaption})}
+
+Constructor de la clase \doxyref{Coche}{p.}{class_coche} 
+\begin{DoxyParams}{Parameters}
+{\em id\+Matricula} & Matrícula del coche \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\index{Coche@{Coche}!getIdMatricula@{getIdMatricula}}
+\index{getIdMatricula@{getIdMatricula}!Coche@{Coche}}
+\doxysubsubsection{getIdMatricula()}
+{\footnotesize\ttfamily \label{class_coche_a7ba59653a90780444044881487f3a1d1} 
+const std\+::string \& Coche\+::get\+Id\+Matricula (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la matrícula del coche. 
+
+\begin{DoxyReturn}{Returns}
+\+\_\+id\+Matricula 
+\end{DoxyReturn}
+\index{Coche@{Coche}!getMarca@{getMarca}}
+\index{getMarca@{getMarca}!Coche@{Coche}}
+\doxysubsubsection{getMarca()}
+{\footnotesize\ttfamily \label{class_coche_ab4a7d4a527bb3a40a11f2599c4fb66df} 
+const std\+::string \& Coche\+::get\+Marca (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la marca del coche. 
+
+\begin{DoxyReturn}{Returns}
+\+\_\+marca 
+\end{DoxyReturn}
+\index{Coche@{Coche}!getModelo@{getModelo}}
+\index{getModelo@{getModelo}!Coche@{Coche}}
+\doxysubsubsection{getModelo()}
+{\footnotesize\ttfamily \label{class_coche_a8df3ab72849eafe663a00656e892ed1d} 
+const std\+::string \& Coche\+::get\+Modelo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Devuelve el modelo del coche. 
+
+\begin{DoxyReturn}{Returns}
+\+\_\+modelo 
+\end{DoxyReturn}
+\index{Coche@{Coche}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Coche@{Coche}}
+\doxysubsubsection{operator$<$()}
+{\footnotesize\ttfamily \label{class_coche_ab9507b0fbafb34a0cb0719172d787b14} 
+bool Coche\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ Coche} \&}]{rhs}{}\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador $<$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \doxyref{Coche}{p.}{class_coche} a comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si el coche actual es menor que el coche a comparar, false en caso contrario 
+\end{DoxyReturn}
+\index{Coche@{Coche}!operator==@{operator==}}
+\index{operator==@{operator==}!Coche@{Coche}}
+\doxysubsubsection{operator==()}
+{\footnotesize\ttfamily \label{class_coche_a248b734acf9fc926d8b8fed482c79c61} 
+bool Coche\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Coche} \&}]{rhs}{}\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \doxyref{Coche}{p.}{class_coche} a comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si son iguales, false en caso contrario 
+\end{DoxyReturn}
+\index{Coche@{Coche}!setIdMatricula@{setIdMatricula}}
+\index{setIdMatricula@{setIdMatricula}!Coche@{Coche}}
+\doxysubsubsection{setIdMatricula()}
+{\footnotesize\ttfamily \label{class_coche_ad2f0083d5c15117d7fb14fd6975b1a81} 
+\textbf{ Coche} \& Coche\+::set\+Id\+Matricula (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id\+Matricula}{}\end{DoxyParamCaption})}
+
+
+
+Establece la matrícula del coche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Matricula} & Matrícula del coche \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referencia al objeto \doxyref{Coche}{p.}{class_coche} 
+\end{DoxyReturn}
+\index{Coche@{Coche}!setMarca@{setMarca}}
+\index{setMarca@{setMarca}!Coche@{Coche}}
+\doxysubsubsection{setMarca()}
+{\footnotesize\ttfamily \label{class_coche_a5d42f25ca3497d100be2e3f9f1930c06} 
+\textbf{ Coche} \& Coche\+::set\+Marca (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{marca}{}\end{DoxyParamCaption})}
+
+
+
+Establece la marca del coche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em marca} & Marca del coche \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referencia al objeto \doxyref{Coche}{p.}{class_coche} 
+\end{DoxyReturn}
+\index{Coche@{Coche}!setModelo@{setModelo}}
+\index{setModelo@{setModelo}!Coche@{Coche}}
+\doxysubsubsection{setModelo()}
+{\footnotesize\ttfamily \label{class_coche_acf8bcf3b2f37bab780b727f62ec6ebeb} 
+\textbf{ Coche} \& Coche\+::set\+Modelo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{modelo}{}\end{DoxyParamCaption})}
+
+
+
+Establece el modelo del coche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em modelo} & Modelo del coche \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referencia al objeto \doxyref{Coche}{p.}{class_coche} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\index{Coche@{Coche}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Coche@{Coche}}
+\doxysubsubsection{operator$<$$<$}
+{\footnotesize\ttfamily \label{class_coche_a9f75832a105fddbe352da4d785308508} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \textbf{ Coche} \&}]{coche}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador $<$$<$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Flujo de salida \\
+\hline
+{\em coche} & \doxyref{Coche}{p.}{class_coche} a mostrar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Flujo de salida 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/torres/\+Downloads/\+Gregorio-\/\+FP/\+Repaso/\+Repaso/\+Git\+Hub/\+EEDD\+\_\+\+P/\+Practica2/Coche.\+h\item 
+/\+Users/torres/\+Downloads/\+Gregorio-\/\+FP/\+Repaso/\+Repaso/\+Git\+Hub/\+EEDD\+\_\+\+P/\+Practica2/Coche.\+cpp\end{DoxyCompactItemize}

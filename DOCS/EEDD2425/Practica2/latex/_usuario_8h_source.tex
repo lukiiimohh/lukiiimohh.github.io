@@ -1,0 +1,71 @@
+\doxysection{Usuario.\+h}
+\label{_usuario_8h_source}\index{/Users/torres/Downloads/Gregorio-\/FP/Repaso/Repaso/GitHub/EEDD\_P/Practica2/Usuario.h@{/Users/torres/Downloads/Gregorio-\/FP/Repaso/Repaso/GitHub/EEDD\_P/Practica2/Usuario.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ admin\ on\ 01/10/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ USUARIO\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ USUARIO\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Coche.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Usuario\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Atributos"{}>}}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \_nif\ =\ \textcolor{stringliteral}{"{}"{}},\ \_clave\ =\ \textcolor{stringliteral}{"{}"{}},\ \_nombre\ =\ \textcolor{stringliteral}{"{}"{}},\ \_direccion\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00015\ \ \ \ \ Coche*\ \_rent\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Constructores\ y\ Destructor"{}>}}
+\DoxyCodeLine{00022\ \ \ \ \ Usuario()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ \ \ \ \ Usuario(\textcolor{keyword}{const}\ std::string\ \&nif,\ \textcolor{keyword}{const}\ std::string\ \&clave,\ \textcolor{keyword}{const}\ std::string\ \&nombre,\ \textcolor{keyword}{const}\ std::string\ \&direccion);}
+\DoxyCodeLine{00034\ \ \ \ \ \string~Usuario();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Getters\ \&\ Setters"{}>}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getNif()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_nif;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ Usuario\&\ setNif(\textcolor{keyword}{const}\ std::string\ \&nif)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \_nif\ =\ nif;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getClave()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_clave;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ Usuario\&\ setClave(\textcolor{keyword}{const}\ std::string\ \&clave)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \_clave\ =\ clave;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getNombre()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_nombre;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ Usuario\&\ setNombre(\textcolor{keyword}{const}\ std::string\ \&nombre)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_nombre\ =\ nombre;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&getDireccion()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_direccion;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ Usuario\&\ setDireccion(\textcolor{keyword}{const}\ std::string\ \&direccion)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \_direccion\ =\ direccion;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \ \ Usuario\&\ setCoche(Coche\&\ cocheAlquilar);}
+\DoxyCodeLine{00116\ \ \ \ \ Coche\ *getRent()\textcolor{keyword}{\ const}\{\ \textcolor{keywordflow}{return}\ \_rent\ ;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//USUARIO\_H}}
+
+\end{DoxyCode}

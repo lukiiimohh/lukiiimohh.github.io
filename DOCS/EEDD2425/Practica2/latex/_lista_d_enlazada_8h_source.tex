@@ -1,0 +1,289 @@
+\doxysection{Lista\+DEnlazada.\+h}
+\label{_lista_d_enlazada_8h_source}\index{/Users/torres/Downloads/Gregorio-\/FP/Repaso/Repaso/GitHub/EEDD\_P/Practica2/ListaDEnlazada.h@{/Users/torres/Downloads/Gregorio-\/FP/Repaso/Repaso/GitHub/EEDD\_P/Practica2/ListaDEnlazada.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ PRACTICA2\_LISTADENLAZADA\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ PRACTICA2\_LISTADENLAZADA\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }ListaDEnlazada\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }Nodo\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ T\ dato;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Nodo\ *ant,\ *sig;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Nodo(T\ \&aDato,\ Nodo\ *aAnt,\ Nodo\ *aSig)\ :}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dato(aDato),\ ant(aAnt),\ sig(aSig)\ \{\}}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ Nodo\ *cabecera,\ *cola;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ tamLista\ =\ 0;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }Iterador\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Nodo\ *nodo;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ ListaDEnlazada<T>;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ Iterador(Nodo\ *aNodo)\ :\ nodo(aNodo)\ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hayAnterior()\ \{\ \textcolor{keywordflow}{return}\ nodo\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ haySiguiente()\ \{\ \textcolor{keywordflow}{return}\ nodo\ !=\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ anterior()\ \{\ nodo\ =\ nodo-\/>ant;\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ siguiente()\ \{\ nodo\ =\ nodo-\/>sig;\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ T\ \&dato()\ \{\ \textcolor{keywordflow}{return}\ nodo-\/>dato;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Constructores\ y\ destructor"{}>}}
+\DoxyCodeLine{00062\ \ \ \ \ ListaDEnlazada()\ :\ cabecera(nullptr),\ cola(nullptr),\ tamLista(0)\ \{\}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \string~ListaDEnlazada();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ ListaDEnlazada(\textcolor{keyword}{const}\ ListaDEnlazada\ \&orig);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Operadores"{}>}}
+\DoxyCodeLine{00083\ \ \ \ \ ListaDEnlazada\ \&operator=(ListaDEnlazada\ \&orig);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00093\ \ \ \ \ ListaDEnlazada<T>\ operator+(ListaDEnlazada\ \&listaSiguiente);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ Iterador\ iteradorInicio()\ \{\ \textcolor{keywordflow}{return}\ Iterador(cabecera);\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ Iterador\ iteradorFinal()\ \{\ \textcolor{keywordflow}{return}\ Iterador(cola);\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Métodos\ de\ inserción"{}>}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ insertaInicio(T\ \&dato);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ insertaFin(T\ \&dato);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ inserta(Iterador\ \&i,\ T\ \&dato);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Métodos\ de\ borrado"{}>}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ borraInicio();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ borraFinal();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ borra(Iterador\ \&i);}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ desc="{}Métodos\ observadores"{}>}}
+\DoxyCodeLine{00162\ \ \ \ \ T\ \&inicio();}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00169\ \ \ \ \ T\ \&fin();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{int}\ tam()\ \{\ \textcolor{keywordflow}{return}\ tamLista;\ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00185\ \ \ \ \ ListaDEnlazada<T>\ concatenar(ListaDEnlazada\ \&listaSiguiente);}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{comment}{//<editor-\/fold\ desc="{}Constructores\ y\ destructor"{}>}}
+\DoxyCodeLine{00189\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00190\ ListaDEnlazada<T>::\string~ListaDEnlazada()\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ cabecera\ ==\ nullptr,\ cola\ ==\ nullptr\ y\ la\ lista\ está\ vacía,\ así\ que\ no}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ hay\ que\ borrar\ nada}}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ Nodo*\ i\ =\ cabecera;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Puntero\ que\ va\ a\ controlar\ la\ destrucción\ de\ la\ lista}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ cola)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Borramos\ posición\ por\ posición}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ i-\/>sig;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ i-\/>ant;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ i;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//A\ estas\ alturas\ el\ puntero\ apunta\ a\ cola,\ así\ que\ borramos\ el\ contenido}}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ cabecera\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00201\ \ \ \ \ cola\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Limpiamos\ la\ basura}}
+\DoxyCodeLine{00202\ \ \ \ \ tamLista\ =\ 0;}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00206\ ListaDEnlazada<T>::ListaDEnlazada(\textcolor{keyword}{const}\ ListaDEnlazada\ \&orig)\ :\ tamLista(0)\ \{}
+\DoxyCodeLine{00207\ \ \ \ \ Nodo\ *i;}
+\DoxyCodeLine{00208\ \ \ \ \ cabecera\ =\ cola\ =\ 0;}
+\DoxyCodeLine{00209\ \ \ \ \ i\ =\ orig.cabecera;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ 0)\{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ insertaFin(i-\/>dato);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ i\ =\ i-\/>sig;}
+\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \}}
+\DoxyCodeLine{00216\ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00219\ ListaDEnlazada<T>\ \&ListaDEnlazada<T>::operator=(ListaDEnlazada\ \&orig)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&orig)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Primero\ borramos\ los\ contenidos\ de\ la\ lista,\ si\ lo\ hay}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ !=\ \textcolor{keyword}{nullptr})\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ cabecera\ ==\ nullptr,\ cola\ ==\ nullptr\ y\ la\ lista\ está}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//vacía,\ así\ que\ no\ hay\ que\ borrar\ nada}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ Nodo\ *i\ =\ cabecera;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<Puntero\ que\ va\ a\ controlar\ la\ destrucción\ de\ la\ lista}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ !=\ cola)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Borramos\ posición\ por\ posición}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ i-\/>sig;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ i-\/>ant;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ i;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//A\ estas\ alturas\ el\ puntero\ apunta\ a\ cola,\ así\ que\ borramos\ el\ contenido}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ cabecera\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ cola\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Limpiamos\ la\ basura}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ tamLista\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Volvemos\ a\ poner\ el\ tamaño\ a\ 0}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Ahora,\ añadimos\ los\ Nodos\ de\ la\ lista\ orig}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (orig.tam()\ !=\ 0)\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ *cabecera\ =\ \textcolor{keyword}{new}\ Nodo(*orig.cabecera,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});\ \ \ \ \ \textcolor{comment}{//Introducimos\ el\ Nodo\ cabecera}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ Nodo\ *i\ =\ cabecera,\ j\ =\ orig.cabecera;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Estos\ punteros\ a\ Nodo\ controlarán\ la\ construcción}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ !=\ orig.cola)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Construimos\ posición\ a\ posición}}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>sig\ =\ \textcolor{keyword}{new}\ Nodo(*j-\/>sig,\ i,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ i-\/>sig;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ j-\/>sig;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ cola\ =\ i-\/>sig\ =\ \textcolor{keyword}{new}\ Nodo(*orig.cola,\ i,\ \textcolor{keyword}{nullptr});\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//A\ estas\ alturas,\ j\ apunta\ a\ la\ cola\ de\ orig,\ así}}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//que\ acabo\ la\ construcción\ con\ la\ asignación\ de\ la}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cola}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00257\ ListaDEnlazada<T>\ ListaDEnlazada<T>::operator+(ListaDEnlazada\ \&listaSiguiente)\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordflow}{if}\ (tamLista\ ==\ 0)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ la\ lista\ actual\ tiene\ tamaño\ 0,\ podemos\ devolver\ listaSiguiente}}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ listaSiguiente;}
+\DoxyCodeLine{00260\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (listaSiguiente.tam()\ ==\ 0)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ listaSiguiente\ tiene\ tamaño\ 0,\ podemos\ devolver\ la\ lista\ actual}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ \ \ \ \ ListaDEnlazada<T>\ aux(*\textcolor{keyword}{this});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Copio\ la\ lista\ actual}}
+\DoxyCodeLine{00264\ \ \ \ \ Nodo\ *i(aux.cola),\ j(listaSiguiente.cabecera);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Creo\ un\ puntero\ a\ Nodo\ apuntando\ a\ la\ cola,\ a\ partir\ de\ ahí}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ copiaremos\ la\ listaSiguiente\ en\ aux\ utilizando\ el\ puntero\ j}}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ !=\ listaSiguiente.cola)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//El\ siguiente\ Nodo\ será\ el\ Nodo\ apuntado\ por\ j}}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ i-\/>sig\ =\ \textcolor{keyword}{new}\ Nodo(*j-\/>sig,\ i,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ i\ =\ i-\/>sig;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ j\ =\ j-\/>sig;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ aux.cola\ =\ i-\/>sig\ =\ \textcolor{keyword}{new}\ Nodo(*j,\ i,\ \textcolor{keyword}{nullptr});\ \ \ \ \ \ \ \textcolor{comment}{//La\ cola\ será\ igual\ al\ último\ elemento\ de\ listaSiguiente}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordflow}{return}\ aux;}
+\DoxyCodeLine{00274\ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00278\ \textcolor{keywordtype}{void}\ ListaDEnlazada<T>::insertaInicio(T\ \&dato)\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ ==\ \textcolor{keyword}{nullptr})\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ la\ cabecera\ ==\ nullptr,\ la\ lista\ está\ vacía\ y}}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ cabecera\ =\ \textcolor{keyword}{new}\ Nodo(dato,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//hay\ que\ insertar\ directamente\ sobre\ la\ cabecera,}}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ cola\ =\ cabecera;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cola\ =\ cabecera\ porque\ solo\ habría\ un\ elemento}}
+\DoxyCodeLine{00282\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ cabecera-\/>ant\ =\ \textcolor{keyword}{new}\ Nodo(dato,\ \textcolor{keyword}{nullptr},\ cabecera);\ \ \ \ \ \ \textcolor{comment}{//En\ otro\ caso\ se\ hace\ una\ inserción\ normal}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ cabecera\ =\ cabecera-\/>ant;}
+\DoxyCodeLine{00285\ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00290\ \textcolor{keywordtype}{void}\ ListaDEnlazada<T>::insertaFin(T\ \&dato)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Es\ el\ mismo\ proceso\ que\ la\ inserción\ al\ principio}}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{comment}{//pero\ con\ punteros\ a\ cola}}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ ==\ \textcolor{keyword}{nullptr})\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Aquí\ es\ indiferente\ insertar\ por\ la\ cola\ o\ por\ la}}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ cabecera\ =\ \textcolor{keyword}{new}\ Nodo(dato,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cabecera\ porque\ van\ a\ acabar\ siendo\ iguales}}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ cola\ =\ cabecera;}
+\DoxyCodeLine{00295\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ cola-\/>sig\ =\ \textcolor{keyword}{new}\ Nodo(dato,\ cola,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ cola\ =\ cola-\/>sig;}
+\DoxyCodeLine{00298\ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00300\ \}}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00303\ \textcolor{keywordtype}{void}\ ListaDEnlazada<T>::inserta(Iterador\ \&i,\ T\ \&dato)\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{if}\ (i.nodo\ ==\ cabecera\ ||\ i.nodo\ ==\ \textcolor{keyword}{nullptr})\ insertaInicio(dato);\ \ \ \ \textcolor{comment}{//Si\ se\ está\ intentando\ insertar\ desde\ la}}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//posición\ de\ cabecera,\ insertar\ al\ inicio,\ lo}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//mismo\ si\ el\ nodo\ es\ nullptr\ (la\ lista\ estaría\ vacía)}}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ Nodo\ *j\ =\ i.nodo-\/>ant;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//j\ será\ el\ objeto\ anterior\ a\ i\ antes\ de\ la\ inserción}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ Nodo\ *aux\ =\ \textcolor{keyword}{new}\ Nodo(dato,\ j,\ i.nodo);}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Ahora,\ colocamos\ en\ esa\ posición\ anterior\ el\ nuevo\ dato}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ j-\/>sig\ =\ aux;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Y\ reconectamos\ el\ nodo\ j\ a\ i-\/>ant,\ donde\ hemos\ insertado\ el\ dato}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ i.nodo-\/>ant\ =\ aux;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ ++tamLista;}
+\DoxyCodeLine{00314\ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00318\ \textcolor{keywordtype}{void}\ ListaDEnlazada<T>::borraInicio()\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{throw}\ std::domain\_error(\textcolor{stringliteral}{"{}[ListaDEnlazada<T>::borraInicio]\ No\ hay\ elementos\ en\ la\ ListaDEnlazada"{}});}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ !=}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ cola)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ la\ cabecera\ y\ la\ cola\ son\ diferentes,\ entonces\ hay\ más\ de\ 1\ elemento}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ cabecera\ =\ cabecera-\/>sig;\ \ \ \ \ \ \ \textcolor{comment}{//Desplazamos\ la\ cabecera}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ cabecera-\/>ant;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Borramos\ el\ contenido\ que\ había\ en\ la\ anterior\ cabecera}}
+\DoxyCodeLine{00324\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si,\ en\ cambio,\ son\ iguales,\ hay\ solo\ un\ elemento\ y\ por\ lo\ tanto:}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ cabecera;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Borramos\ el\ contenido\ de\ la\ cabecera}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ cabecera\ =\ cola\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Dejamos\ los\ dos\ punteros\ apuntando\ a\ 0\ para\ indicar\ que\ la\ lista\ queda}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \textcolor{comment}{//vacía\ y\ para\ que\ no\ quede\ basura\ en\ ellos}}
+\DoxyCodeLine{00328\ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ -\/-\/tamLista;}
+\DoxyCodeLine{00330\ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00333\ \textcolor{keywordtype}{void}\ ListaDEnlazada<T>::borraFinal()\ \{\ \textcolor{comment}{//TODO:\ Adaptalo\ tu\ a\ la\ manera\ en\ la\ que\ tienes\ los\ demás,\ para\ que\ siga}}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{comment}{//el\ mismo\ orden\ de\ if\ y\ eso,\ no\ vaya\ a\ ser\ que\ ralle\ la\ profesora}}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordflow}{if}\ (cola)\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ tamLista-\/-\/;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ Nodo\ *borrado\ =\ cola;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ cola\ =\ cola-\/>ant;}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ borrado;}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\ !=\ 0)}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ cola-\/>sig\ =\ 0;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ cabecera\ =\ 0;}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \}}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00348\ \textcolor{keywordtype}{void}\ ListaDEnlazada<T>::borra(Iterador\ \&i)\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::domain\_error(\textcolor{stringliteral}{"{}[ListaDEnlazada<T>::borraFinal]\ No\ hay\ elementos\ en\ la\ ListaDEnlazada"{}});}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ !=\ cola)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ la\ cabecera\ y\ la\ cola\ son\ diferentes,\ entonces\ hay\ más\ de\ 1\ elemento}}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i.nodo\ ==\ cabecera)\ borraInicio();\ \ \textcolor{comment}{//Si\ el\ iterador\ apunta\ a\ la\ cabecera\ o\ a\ la\ cola,\ llamamos\ las\ funciones}}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i.nodo\ ==\ cola)\ borraFinal();\ \ \ \ \ \ \ \textcolor{comment}{//correspondientes\ para\ no\ tener\ que\ programar\ más\ casos}}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ i.nodo-\/>ant-\/>sig=i.nodo-\/>sig;}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ i.nodo-\/>sig-\/>ant=i.nodo-\/>ant;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//y\ eliminamos\ el\ que\ queda\ en\ medio\ (el\ que\ queríamos\ borrar)}}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ i.nodo;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/tamLista;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si,\ en\ cambio,\ son\ iguales,\ hay\ solo\ un\ elemento\ y\ por\ lo\ tanto:}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ borraFinal();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//borramos,\ por\ ejemplo,\ por\ el\ final\ y\ dejamos\ la\ lista\ vacía}}
+\DoxyCodeLine{00362\ \ \ \ \ \}}
+\DoxyCodeLine{00363\ \}}
+\DoxyCodeLine{00364\ }
+\DoxyCodeLine{00365\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00366\ T\ \&ListaDEnlazada<T>::inicio()\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordflow}{if}\ (cabecera\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{throw}\ std::domain\_error(\textcolor{stringliteral}{"{}[ListaDEnlazada<T>::inicio]\ La\ lista\ está\ vacía"{}});}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{return}\ cabecera-\/>dato;}
+\DoxyCodeLine{00369\ \}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00372\ T\ \&ListaDEnlazada<T>::fin()\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{if}\ (cola\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{throw}\ std::domain\_error(\textcolor{stringliteral}{"{}[ListaDEnlazada<T>::fin]\ La\ lista\ está\ vacía"{}});}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordflow}{return}\ cola-\/>dato;}
+\DoxyCodeLine{00375\ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00378\ ListaDEnlazada<T>\ ListaDEnlazada<T>::concatenar(ListaDEnlazada\ \&listaSiguiente)\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ +\ listaSiguiente;}
+\DoxyCodeLine{00380\ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PRACTICA2\_LISTADENLAZADA\_H}}
+
+\end{DoxyCode}

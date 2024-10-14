@@ -1,0 +1,52 @@
+\doxysection{Reanelcar.\+h}
+\label{_reanelcar_8h_source}\index{/Users/torres/Downloads/Gregorio-\/FP/Repaso/Repaso/GitHub/EEDD\_P/Practica2/Reanelcar.h@{/Users/torres/Downloads/Gregorio-\/FP/Repaso/Repaso/GitHub/EEDD\_P/Practica2/Reanelcar.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ REANELCAR\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ REANELCAR\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ListaDEnlazada.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}VDinamico.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Usuario.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Coche.h"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Reanelcar\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ ListaDEnlazada<Usuario>\ users;}
+\DoxyCodeLine{00018\ \ \ \ \ VDinamico<Coche>\ cars;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ Reanelcar()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \string~Reanelcar()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \ \ \ \ Reanelcar(\textcolor{keyword}{const}\ std::string\ \&ficheroCoches,\ \textcolor{keyword}{const}\ std::string\ \&ficheroUsuarios);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Constructor\ de\ copia\ de\ la\ clase\ Reanelcar}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ \ *\ @param\ orig\ Reanelcar\ a\ copiar}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00040\ \ \ \ \ Reanelcar(\textcolor{keyword}{const}\ Reanelcar\ \&orig);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ tamCoches();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ tamUsuarios();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ Usuario*\ buscarUsrNif(std::string\&\ nifBuscar);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ buscarUsrNomb(std::string\&\ cadenaBuscar,\ ListaDEnlazada<Usuario>\ \&listaARellenar);}
+\DoxyCodeLine{00073\ \ \ \ \ Coche*\ buscarCochMat(std::string\&\ matriculaBuscar);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ buscarCochModelo(std::string\&\ modeloBuscar,\ VDinamico<Coche>\ \&vectorARellenar);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ buscarCochModeloTradicional(std::string\ \&modeloBuscar,\ VDinamico<Coche>\ \&vectorARellenar);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ alquilar(Usuario\&\ usuario,\ Coche\&\ coche);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ eliminaUsuarios(\textcolor{keyword}{const}\ std::string\&\ cadenaABuscar);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//FIXME\ Esto\ no\ se\ debe\ de\ usar\ porque\ si\ cars\ y\ users\ son\ privados\ es\ por\ algo,\ y\ esto\ es\ como\ ponerlos\ en\ public}}
+\DoxyCodeLine{00105\ \ \ \ \ ListaDEnlazada<Usuario>\&\ listaUsuarios()\ \{\textcolor{keywordflow}{return}\ users;\}}
+\DoxyCodeLine{00106\ \ \ \ \ VDinamico<Coche>\ vectorCoches()\ \{\textcolor{keywordflow}{return}\ cars;\}}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//REANELCAR\_H}}
+
+\end{DoxyCode}
